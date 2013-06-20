@@ -1,0 +1,73 @@
+div.central {
+	margin: auto;
+	width: 800px;
+	background-color: #FFFFFF;
+	text-align: center;
+	border-radius: 10;
+	padding:30px;
+
+}
+h1 {
+	text-align: center;
+	display:block;
+	background-color: #FFFFFF;
+	color: #274A28;
+	padding-bottom:0px;
+	padding-top:10px;
+	font-family: Georgia, "Times New Roman";
+	
+}
+.textinput{
+	text-align: center;
+}
+.none{
+	margin: 0px;
+}
+.output{
+	font-size: 20px;
+	color: #274A28;
+	font-weight: bold;
+}
+h2{
+	color: #274A28;
+}
+p{
+	text-align:left;
+	margin:40px;
+}
+a{
+	font-size:18px;
+}
+
+nav {
+	font-weight: bold;
+	padding-top: 30px;
+	text-align: center;
+}
+
+body {
+	background-color: #475D8C;
+}
+
+.pass{
+	background-color: green;
+}
+.fail{
+	background-color: red;
+}
+.button{
+	margin-left: 10px;
+}
+
+form{
+	display:block;
+}
+legend {
+display: block;
+-webkit-padding-start: 2px;
+-webkit-padding-end: 2px;
+border: none;
+text-align:left;
+color: #274A28;
+font-size:20px;
+}

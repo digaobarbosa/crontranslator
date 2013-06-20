@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Cron Translator</title>
+		<meta name="description" content="Translate cron expressions to plain English" />
+		<meta name="author" content="Digao" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="styles/main.css"/>
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<script src="translator.js" language="JavaScript"></script>
+		<script src="jquery.js" language="JavaScript"></script>
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-25302799-3']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+		<script type="text/javascript">
+			function callTranslator(){
+				var val = $("#exp").val()
+				console.log(val)
+				try{
+					val = cronParse(val)
+					console.log(val)
+					$("#output").text(val)
+					
+				}catch(e){
+					alert(e)
+				}
+			}
+			$(document).ready(function(){
+				$("#translate").click(callTranslator)
+			})
+		</script>
+	</head>
+	<body>
+		<div class="central">
+			<header>
+				<h1>Cron Translator</h1>
+			</header>
+			<hr />
+			<div class="content">
+            <img src="chronometer.png" width="128" height="128" alt="chronometrer"></div>
+			
+			<div class="content">
+				<form>
+					<fieldset>
+                    	<legend>6 Fields Cron Expression</legend>
+                    	<p class="none">The fields to be filled are: min-hour-day-month-day of week-year</p>
+                    	<br />
+                        <input type="text" id="exp" size="20" value="0 0 * * ? *" class="textinput"/>
+                        <input type="button" class="button" id="translate" value="Translate"/>
+						<div id="output" class="output"></div>
+                    </fieldset>
+
+				</form>
+			</div>
+			<div class="content">
+				<h2>About</h2>
+                <p>After inserting a cron expression on fields above, you will receive a translation to plain english. I'm still trying to improve the translation. Please contact me with any suggestions you have. I have based the translation on the Quartz explanation.</p>
+				<p><a href="http://www.quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger">Quartz definition of cron expressions:</a> best explanation I found about it. But it is a little different than the cronjob app (it has a seconds field).</p>
+				<p>
+				  <a href="http://en.wikipedia.org/wiki/Cron#CRON_expression"> Wikipedia page about cron expressions:</a> Wikipedia also has a good explanation</p>
+            </div>
+			<footer>
+				<nav>
+					<a href="/">Home</a>
+					<a href="mailto:digaozao+cron@gmail.com">Contact</a>
+				</nav>
+				<p>
+					&copy; Copyright  by Digao
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>
